@@ -1,32 +1,9 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useLocation, } from "react-router-dom"
 import Footer from "./Footer"
 import { useState } from "react"
 
 const HomeLayout = () => {
-  console.log('first')
- const [activeLink, setActiveLink] = useState({
-   home: false,
-   about: false,
-   newsLetter: false,
- })
-
-const handleClick = (str) => {
-  switch (str) {
-    case 'home':
-      setActiveLink({ home: true, about: false, newsLetter: false })
-      break
-    case 'about':
-      setActiveLink({ home: false, about: true, newsLetter: false })
-      break
-    case 'newsLetter':
-      setActiveLink({ home: false, about: false, newsLetter: true })
-      break
-    default:
-      setActiveLink({ home: false, about: false, newsLetter: false })
-      break
-  }
-}
-console.log(activeLink.newsLetter)
+const location = useLocation()
   return (
     <div>
       <nav className="nav-items display-flex-center">
@@ -35,9 +12,10 @@ console.log(activeLink.newsLetter)
           <li>
             <Link
               to="/"
-              onClick={() => handleClick('home')}
               className={
-                activeLink.home ? 'nav-item nav-item-color' : 'nav-item'
+                location.pathname === '/'
+                  ? 'nav-item nav-item-color'
+                  : 'nav-item'
               }
             >
               Home
@@ -46,9 +24,10 @@ console.log(activeLink.newsLetter)
           <li>
             <Link
               to="/about"
-              onClick={() => handleClick('about')}
               className={
-                activeLink.about ? 'nav-item nav-item-color' : 'nav-item'
+                location.pathname === '/about'
+                  ? 'nav-item nav-item-color'
+                  : 'nav-item'
               }
             >
               About
@@ -57,9 +36,10 @@ console.log(activeLink.newsLetter)
           <li>
             <Link
               to="/newsletter"
-              onClick={() => handleClick('newsLetter')}
               className={
-                activeLink.newsLetter ? 'nav-item nav-item-color' : 'nav-item'
+                location.pathname === '/newsletter'
+                  ? 'nav-item nav-item-color'
+                  : 'nav-item'
               }
             >
               NewsLetter
@@ -67,8 +47,10 @@ console.log(activeLink.newsLetter)
           </li>
         </div>
       </nav>
+      <section>
+        <Outlet />
+      </section>
 
-      <Outlet />
       <Link to="/footer">
         <Footer />
       </Link>
