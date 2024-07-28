@@ -6,48 +6,50 @@ const HomeLayout = () => {
 const location = useLocation()
   return (
     <div>
-      <nav className="nav-items display-flex-center">
-        <div className="logo">MixMaster</div>
-        <div className="display-flex-center nav-links ">
-          <li>
-            <Link
-              to="/"
-              className={
-                location.pathname === '/'
-                  ? 'nav-item nav-item-color'
-                  : 'nav-item'
-              }
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              className={
-                location.pathname === '/about'
-                  ? 'nav-item nav-item-color'
-                  : 'nav-item'
-              }
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/newsletter"
-              className={
-                location.pathname === '/newsletter'
-                  ? 'nav-item nav-item-color'
-                  : 'nav-item'
-              }
-            >
-              NewsLetter
-            </Link>
-          </li>
-        </div>
-      </nav>
-      <section>
+      <div className="navbar">
+        <nav className="nav-items display-flex-center">
+          <div className="logo">MixMaster</div>
+          <div className="display-flex-center nav-links ">
+            <li>
+              <Link
+                to="/"
+                className={
+                  location.pathname === '/'
+                    ? 'nav-item nav-item-color'
+                    : 'nav-item'
+                }
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className={
+                  location.pathname === '/about'
+                    ? 'nav-item nav-item-color'
+                    : 'nav-item'
+                }
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/newsletter"
+                className={
+                  location.pathname === '/newsletter'
+                    ? 'nav-item nav-item-color'
+                    : 'nav-item'
+                }
+              >
+                NewsLetter
+              </Link>
+            </li>
+          </div>
+        </nav>
+      </div>
+      <section className="pages">
         <Outlet />
       </section>
 
