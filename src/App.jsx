@@ -1,24 +1,43 @@
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom'
 import './App.css'
 import { About, Cocktail, HomeLayout,Landing , Newsletter,Error, Footer} from './pages'
-
+import { loader as landingLoader } from './pages/Landing'
 function App() {
-
+ const router = createBrowserRouter([
+   {
+     path: '/',
+     element: <HomeLayout />,
+     errorElement: <Error />,
+     children: [
+       {
+         index: true,
+         element: <Landing />,
+         loader: landingLoader,
+       },
+       {
+         path: '/cocktail',
+         element: <Cocktail />,
+       },
+       {
+         path: '/about',
+         element: <About />,
+       },
+       {
+         path: '/newsletter',
+         element: <Newsletter />,
+       },
+       {
+         path: '/footer',
+         element: <Footer />,
+       },
+     ],
+   },
+ ])
  return (
+  
    <div>
-     <BrowserRouter>
-       <Routes>
-         <Route path="/" element={<HomeLayout />}>
-           <Route index element={<Landing />} />
-           <Route path="/cocktail" element={<Cocktail />} />
-           <Route path="/about" element={<About />} />
-           <Route path="/newsletter" element={<Newsletter />} />
-           <Route path="/footer" element={<Footer />} />
-         </Route>
-         <Route path="*" element={<Error />} />
-       </Routes>
-     </BrowserRouter>
+    <RouterProvider router={router} />
    </div>
  )
 }
