@@ -15,8 +15,8 @@ function App() {
            <Route path="/about" element={<About />} />
            <Route path="/newsletter" element={<Newsletter />} />
            <Route path="/footer" element={<Footer />} />
-           <Route path="*" element={<Error />} />
          </Route>
+         <Route path="*" element={<Error />} />
        </Routes>
      </BrowserRouter>
    </div>
