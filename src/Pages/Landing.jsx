@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, } from "react-router-dom"
 import Cocktail from "./Cocktail"
 import CocktailList from "../componets/CocktailList"
 
@@ -11,7 +11,9 @@ export const loader = async ()=>{
   return {drinks:response.data.drinks,searchStr }
 }
 
+
 const Landing = () => {
+
  
    const {drinks, searchStr} = useLoaderData()
    

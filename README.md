@@ -20,3 +20,7 @@ www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka
 
 Lookup full cocktail details by id
 www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
+
+### useNavigation
+In React Router, useNavigation is a hook that allows you to interact with the navigation system of your application programmatically. It provides methods and properties to navigate between routes and manage navigation state. This hook is useful for performing navigation actions within functional components.
+

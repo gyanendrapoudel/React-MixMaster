@@ -12,7 +12,7 @@ const Error = () => {
         return (
           <>
             <div className="pages error-page">
-              <h4 style={{ fontSize: '2rem', color: '#EB5B00' }}>
+              <h4 style={{ fontSize: '2rem', color: '#EB5B00', marginBottom:"2rem" }}>
                 Page not Found !
               </h4>
               <Link to="/" className="nav-item" style={homeLink}>

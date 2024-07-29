@@ -7,10 +7,10 @@ const CocktailList = ({drinks}) => {
  })
  
   return (
-    <div>
-        {formattedDrinks.map((item)=>{
-            return <SingleCockTail key={ item.id} {...item}/>
-        })}
+    <div className="cocktails">
+      {formattedDrinks.map((item) => {
+        return <SingleCockTail key={item.id} {...item} />
+      })}
     </div>
   )
 }

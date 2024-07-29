@@ -4,6 +4,7 @@ import './App.css'
 import { About, Cocktail, HomeLayout,Landing , Newsletter,Error, Footer} from './pages'
 import { loader as landingLoader } from './pages/Landing'
 function App() {
+  
  const router = createBrowserRouter([
    {
      path: '/',
@@ -16,7 +17,7 @@ function App() {
          loader: landingLoader,
        },
        {
-         path: '/cocktail',
+         path: '/cocktail/:id',
          element: <Cocktail />,
        },
        {
