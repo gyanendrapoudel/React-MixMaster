@@ -3,6 +3,7 @@ import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } fro
 import './App.css'
 import { About, Cocktail, HomeLayout,Landing , Newsletter,Error, Footer} from './pages'
 import { loader as landingLoader } from './pages/Landing'
+import { loader as cocktailLoader } from './pages/Cocktail'
 function App() {
   
  const router = createBrowserRouter([
@@ -18,6 +19,7 @@ function App() {
        },
        {
          path: '/cocktail/:id',
+         loader:cocktailLoader,
          element: <Cocktail />,
        },
        {

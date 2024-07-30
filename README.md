@@ -24,3 +24,40 @@ www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
 ### useNavigation
 In React Router, useNavigation is a hook that allows you to interact with the navigation system of your application programmatically. It provides methods and properties to navigate between routes and manage navigation state. This hook is useful for performing navigation actions within functional components.
 
+
+### Cocktail.jsx using loader to get id send from detail btn from home page. needed in cocktail route
+
+```js
+const singleCocktailUrl =
+  'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+import { useLoaderData, Link } from 'react-router-dom';
+import axios from 'axios';
+
+export const loader = async ({ params }) => {
+  const { id } = params;
+  const { data } = await axios.get(`${singleCocktailUrl}${id}`);
+  return { id, data };
+};
+
+
+const Cocktail = () => {
+  const { id, data } = useLoaderData();
+
+  const singleDrink = data.drinks[0];
+  return (
+    <>
+  
+    <>
+  )
+}
+  ```
+  in App.jsx
+   
+   ```js
+import { loader as cocktailLoader } from './pages/Cocktail'
+
+   {
+         path: '/cocktail/:id',
+         loader:cocktailLoader,
+         element: <Cocktail />,
+     },
