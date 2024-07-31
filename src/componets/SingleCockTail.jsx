@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 const SingleCockTail = ({name, image, id, info, glass}) => {
-    console.log(id)
+    
   return (
   
   
