@@ -61,3 +61,15 @@ import { loader as cocktailLoader } from './pages/Cocktail'
          loader:cocktailLoader,
          element: <Cocktail />,
      },
+
+### Install react toastify library
+`npm i react-toastify
+`
+ in app.jsx 
+ ```js 
+ import { ToastContainer } from 'react-toastify'
+ import 'react-toastify/dist/ReactToastify.css' 
+
+   <ToastContainer position="top-center" autoClose={1000} />
+```
+autoClose is time to display toast, 1000 means 1 sec
