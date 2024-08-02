@@ -1,10 +1,17 @@
-import { Form } from "react-router-dom"
+import axios from "axios"
+import { Form, redirect } from "react-router-dom"
+import { toast } from "react-toastify"
+
+const newsletterUrl = 'http://localhost:9000/api/newsletter'
 export const action = async ({ request }) => {
   const formData = await request.formData()
-  console.log(Object.fromEntries(formData))
-  
-  return null
+  const data = Object.fromEntries(formData)
+  const response = await axios.post(newsletterUrl,data)
+  console.log(response)
+  toast.success(response.data.msg)
+  return redirect("/")
 }
+
 const Newsletter = () => {
   return (
     
@@ -18,6 +25,7 @@ const Newsletter = () => {
             type="text"
             className="form-control"
             name="name"
+            required
             defaultValue={'gyan'}
           />
         </div>
@@ -30,6 +38,7 @@ const Newsletter = () => {
             className="form-control"
             name="lastName"
             defaultValue={'poudel'}
+            required
           />
         </div>
         <div className="mb-3">
@@ -40,6 +49,7 @@ const Newsletter = () => {
             type="email"
             className="form-control"
             name="email"
+            required
             defaultValue={'test@gmail.com'}
           />
         </div>
