@@ -16,6 +16,9 @@ app.get("/",(req,res)=>{
 app.post('/api/newsletter', async (req, res) => {
   users.push(req.body)
   const {name, lastName, email} = req.body
+  if(!name || !lastName || !email){
+   return  res.status(404).send({ msg:"all field required"})
+  }
    await sendEmail(email,"success","details received" )
   res.json({ status: 200, msg: 'success, check your email' })
 })

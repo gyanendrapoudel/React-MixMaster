@@ -6,10 +6,15 @@ const newsletterUrl = 'http://localhost:9000/api/newsletter'
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
-  const response = await axios.post(newsletterUrl,data)
-  console.log(response)
-  toast.success(response.data.msg)
-  return redirect("/")
+ try {
+   const response = await axios.post(newsletterUrl, data)
+   console.log(response)
+   toast.success(response.data.msg)
+   return redirect('/')
+ } catch (error) {
+  console.log(error)
+   console.log(error.response.data.msg)
+ }
 }
 
 const Newsletter = () => {
@@ -25,7 +30,7 @@ const Newsletter = () => {
             type="text"
             className="form-control"
             name="name"
-            required
+        
             defaultValue={'gyan'}
           />
         </div>
@@ -50,7 +55,7 @@ const Newsletter = () => {
             className="form-control"
             name="email"
             required
-            defaultValue={'test@gmail.com'}
+            defaultValue={'gyanen56@gmail.com'}
           />
         </div>
         <button type="submit" className="btn btn-success w-100">
