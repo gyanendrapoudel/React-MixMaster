@@ -20,10 +20,11 @@ function App() {
          index: true,
          element: <Landing />,
          loader: landingLoader,
+        
        },
        {
          path: '/cocktail/:id',
-         loader:cocktailLoader,
+         loader: cocktailLoader,
          element: <Cocktail />,
        },
        {
@@ -32,9 +33,8 @@ function App() {
        },
        {
          path: '/newsletter',
-          action:newsletterAction,
+         action: newsletterAction,
          element: <Newsletter />,
-        
        },
        {
          path: '/footer',
