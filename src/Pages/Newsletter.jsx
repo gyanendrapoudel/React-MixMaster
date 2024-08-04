@@ -20,7 +20,7 @@ export const action = async ({ request }) => {
 const Newsletter = () => {
  const navigation =  useNavigation()
  const isSubmitting = navigation.state==="submitting"
- console.log(isSubmitting, navigation.state)
+
   return (
     
       <Form style={{ marginTop: '4rem', padding: '0 2rem' }} method="POST">

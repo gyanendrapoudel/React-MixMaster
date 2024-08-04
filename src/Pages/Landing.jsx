@@ -2,9 +2,12 @@ import axios from "axios"
 import { useLoaderData, } from "react-router-dom"
 import Cocktail from "./Cocktail"
 import CocktailList from "../componets/CocktailList"
+import SearchForm from "../componets/SearchForm"
 
-export const loader = async ()=>{
-  const searchStr =''
+export const loader = async ({request})=>{
+  const url = new URL(request.url)
+  console.log(url, request.url, url.searchParams.get("search"),url===request.url)
+  const searchStr = url.searchParams.get('search')||''
  const response = await axios(
    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchStr}`
  )
@@ -19,6 +22,7 @@ const Landing = () => {
    
   return (
     <>
+      <SearchForm str = {searchStr }/>
       <CocktailList drinks={drinks}/>
 
     </>
