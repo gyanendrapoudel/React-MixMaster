@@ -1,7 +1,7 @@
 
 import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom'
 import './App.css'
-import { About, Cocktail, HomeLayout,Landing , Newsletter,Error, Footer} from './pages'
+import { About, Cocktail, HomeLayout,Landing , Newsletter,Error,} from './pages'
 import { loader as landingLoader } from './pages/Landing'
 import { loader as cocktailLoader } from './pages/Cocktail'
 import {action as newsletterAction} from './pages/Newsletter'
@@ -35,10 +35,6 @@ function App() {
          path: '/newsletter',
          action: newsletterAction,
          element: <Newsletter />,
-       },
-       {
-         path: '/footer',
-         element: <Footer />,
        },
      ],
    },
