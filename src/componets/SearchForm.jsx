@@ -6,7 +6,7 @@ const SearchForm = ({str}) => {
    const isSubmitting = navigation.state === 'submitting'
     console.log(isSubmitting, navigation.state)
   return (
-    <Form className="input-group search-form mb-5 shadow-lg m-auto ">
+    <Form className="input-group search-form my-5 shadow-lg m-auto ">
       <input
         type="search"
         className="form-control"

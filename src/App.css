@@ -59,7 +59,7 @@ margin:0 auto ;
 margin-top: 2rem;
 background-color: rgb(239, 239, 239);
 margin-bottom: 2rem;
-min-height: 60vh;
+min-height: 75vh;
 padding:  1rem ;
 }
 /* error page */
@@ -89,9 +89,25 @@ width: 80%;
  margin: 0 auto;
 
 } 
+/* search input */
 .search-form{
   width: 55%;
+  padding: 1.5rem 2rem;
+  
  
+}
+/* about page */
+.about-page{
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+.about-heading{
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+.footer-page {
+  
 }
 @media(max-width:600px) {
   .nav-items{
