@@ -7,7 +7,18 @@ import { loader as cocktailLoader } from './pages/Cocktail'
 import {action as newsletterAction} from './pages/Newsletter'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-  
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient({
+  defaultOptions:{
+    queries:{
+      staleTime:1000*60*5,
+    }
+  }
+})
+
+QueryClientProvider
+
 function App() {
   
  const router = createBrowserRouter([
@@ -41,8 +52,11 @@ function App() {
  ])
  return (
    <div>
-     <ToastContainer position="top-center" autoClose={1000} />
-     <RouterProvider router={router} />
+     <QueryClientProvider client={queryClient}>
+       <ToastContainer position="top-center" autoClose={1000} />
+       <RouterProvider router={router} />
+
+     </QueryClientProvider>
    </div>
  )
 }
