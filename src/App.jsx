@@ -17,7 +17,7 @@ const queryClient = new QueryClient({
   }
 })
 
-QueryClientProvider
+
 
 function App() {
   
@@ -30,7 +30,7 @@ function App() {
        {
          index: true,
          element: <Landing />,
-         loader: landingLoader,
+         loader: landingLoader(queryClient),
         
        },
        {
@@ -55,7 +55,6 @@ function App() {
      <QueryClientProvider client={queryClient}>
        <ToastContainer position="top-center" autoClose={1000} />
        <RouterProvider router={router} />
-
      </QueryClientProvider>
    </div>
  )
