@@ -35,7 +35,7 @@ function App() {
        },
        {
          path: '/cocktail/:id',
-         loader: cocktailLoader,
+         loader: cocktailLoader(queryClient),
          element: <Cocktail />,
        },
        {
