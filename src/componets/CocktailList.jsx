@@ -26,7 +26,7 @@ console.log(newDrinksList)
           
             {newDrinksList.map((item, i) => {
               return (
-                <button className="btn btn-primary" key={i} onClick={() => setPage(i)}>
+                <button className={page===i?"btn btn-success":"btn btn-secondary"} key={i} onClick={() => setPage(i)}>
                   {i + 1}
                 </button>
               )
