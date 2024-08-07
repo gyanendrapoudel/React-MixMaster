@@ -115,7 +115,7 @@ width: 80%;
   top:-5rem;
   padding: 0.25rem;
   
-  animation: move 4s linear infinite;
+  animation: move 4s linear;
 }
 @media(max-width:600px) {
   .nav-items{
