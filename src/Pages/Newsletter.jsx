@@ -22,50 +22,55 @@ const Newsletter = () => {
  const isSubmitting = navigation.state==="submitting"
 
   return (
-    
-      <Form style={{ marginTop: '4rem', padding: '0 2rem' }} method="POST">
-        <div className="text-center fs-5">Our Newsletter</div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Name
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="name"
-            required
-            defaultValue={'gyan'}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Last Name
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            name="lastName"
-            defaultValue={'poudel'}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            name="email"
-            required
-            defaultValue={'gyanen56@gmail.com'}
-          />
-        </div>
-        <button type="submit" className="btn btn-success w-100" disabled={isSubmitting}>
-         {isSubmitting?"Submitting":"Submit"}
-        </button>
-      </Form>
-    
+    <Form style={{ marginTop: '4rem', padding: '0 2rem',position:"relative" }} method="POST">
+      <div className="alert bg-danger text-light">
+        Please start node server for submit functionality 
+      </div>
+      <div className="text-center fs-5">Our Newsletter</div>
+      <div className="mb-3">
+        <label htmlFor="exampleInputEmail1" className="form-label">
+          Name
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="name"
+          required
+          defaultValue={'gyan'}
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="exampleInputEmail1" className="form-label">
+          Last Name
+        </label>
+        <input
+          type="text"
+          className="form-control"
+          name="lastName"
+          defaultValue={'poudel'}
+          required
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="exampleInputPassword1" className="form-label">
+          Email
+        </label>
+        <input
+          type="email"
+          className="form-control"
+          name="email"
+          required
+          defaultValue={'gyanen56@gmail.com'}
+        />
+      </div>
+      <button
+        type="submit"
+        className="btn btn-success w-100"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? 'Submitting' : 'Submit'}
+      </button>
+    </Form>
   )
 }
 export default Newsletter
